@@ -9,6 +9,5 @@ module.exports = router.post('/deleteRentBikeFromDashboard', async (req, res)=>{
     const getId = req.body.bikeIdFromDashBoard
     const x = getId
     const findBike = await Rentbike.findOneAndDelete({_id: x})
-
     
 })

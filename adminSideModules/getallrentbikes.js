@@ -6,7 +6,6 @@ const Rentbike = require('../models/rentbikeSchema');
 
 module.exports = router.get('/getAvailableRentBikes', async (req, res) =>{
     const allRentBikes = await Rentbike.find();
-
     try{
         
         res.status(200).send(allRentBikes);

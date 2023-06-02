@@ -29,10 +29,8 @@ router.use(require('../clientSideModules/updatedbafetrrentedbike'))
 
 
 
-
-
-
 // Admin Side Modules---for--- SignIn, SignOut
+router.use(require('../adminSideModules/createadmin'))
 router.use(require('../adminSideModules/signinadmin'))
 router.use(require('../adminSideModules/signoutadmin'))
 router.use(require('../adminSideModules/getadmindata'))
