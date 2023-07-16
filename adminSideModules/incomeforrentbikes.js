@@ -7,9 +7,7 @@ const Rentbikeincomes = require('../models/rentBikeIncomeSchema');
 module.exports = router.get('/getrentbikeincome', async (req, res) =>{
     const allIncomes = await Rentbikeincomes.find();
 
-    console.log(allIncomes);
     try{
-        
         res.status(200).send(allIncomes);
 
     }catch(error) {
