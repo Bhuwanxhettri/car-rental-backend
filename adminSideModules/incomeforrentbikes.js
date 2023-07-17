@@ -4,15 +4,15 @@ const adminAuthentication = require("../middelware/adminAuthentication");
 
 const Rentbikeincomes = require('../models/rentBikeIncomeSchema');
 
-module.exports = router.get('/getrentbikeincome', async (req, res) =>{
+module.exports = router.get('/getrentbikeincome', async (req, res) => {
     const allIncomes = await Rentbikeincomes.find();
-
-    try{
+    
+    try {
         res.status(200).send(allIncomes);
 
-    }catch(error) {
+    } catch (error) {
         res.status(400).send(error.message);
     }
 
-    
+
 });

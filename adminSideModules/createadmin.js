@@ -5,12 +5,12 @@ const Admin = require("../models/adminSchema");
 // Create Admin
 router.post("/createAdmin", async (req, res) => {
   try {
-    const { adminName, email, phone, adminPassword} = req.body;
+    const { adminName, email, phone, adminPassword } = req.body;
     // Check if admin with the same email already exists
     const existingAdmin = await Admin.findOne({ email });
     if (existingAdmin) {
       return res
-        .status(400)
+        .status(400)  
         .json({ error: "Admin with this email already exists" });
     }
 
@@ -20,7 +20,6 @@ router.post("/createAdmin", async (req, res) => {
       email,
       phone,
       adminPassword,
-    //   cPassword,
     });
     // Save admin to the database
     await admin.save();

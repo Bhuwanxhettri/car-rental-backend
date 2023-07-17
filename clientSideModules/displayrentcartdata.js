@@ -8,7 +8,6 @@ const Rentcart = require('../models/rentcartSchema');
 module.exports = router.get('/getRentCartData', authenticate, async (req, res) =>{
     const findUser = await User.findOne({_id: req.userID});
     const findUserById = findUser._id;
-
     const cartData = await Rentcart.findOne({userById: findUserById});
     try{
         
@@ -16,7 +15,16 @@ module.exports = router.get('/getRentCartData', authenticate, async (req, res) =
 
     }catch(error) {
         res.status(400).send(error.message);
-    }
+    }    
+});
 
-    
+module.exports = router.get('/getRentCar', async (req, res) =>{
+    const cartData = await Rentcart.find();
+    try{
+        
+        res.status(200).send(cartData);
+
+    }catch(error) {
+        res.status(400).send(error.message);
+    }    
 });

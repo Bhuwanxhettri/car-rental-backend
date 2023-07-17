@@ -41,7 +41,6 @@ const rentBikeIncomeSchema = new mongoose.Schema({
 
 
 
-
 const Rentbikeincomes = mongoose.model('RENTBIKEINCOME', rentBikeIncomeSchema);
 
 module.exports = Rentbikeincomes;

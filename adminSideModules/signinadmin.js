@@ -10,12 +10,11 @@ module.exports = router.post("/signinAdmin", async (req, res) => {
   try {
     let token;
     const { adminName, adminPassword } = req.body;
-
+     
     if (!adminName || !adminPassword) {
       return res.status(400).json({ error: "invalid crededntials" });
     }
     const adminSignin = await Admin.findOne({ email: adminName });
-    console.log(adminSignin)
     if (adminSignin) {
       const isSame = await bcrypt.compare(
         adminPassword,
